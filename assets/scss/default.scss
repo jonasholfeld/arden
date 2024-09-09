@@ -4,8 +4,17 @@
 @import "grid";
 
 body {
-    color: red;
+    color: green;
     h1 {
-        color: green;
+        &:nth-child(1) {
+            p {
+                color: lightpink;
+            }
+        }
     }
 }
+
+
+
+
+

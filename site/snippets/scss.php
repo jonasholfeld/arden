@@ -53,31 +53,30 @@ $CSSFileTime = filemtime($CSS);
 
 // Update CSS when needed.
 if (!file_exists($CSS) or $SCSSFileTime > $CSSFileTime ) {
+    // Activate library.
+    require_once $root . '/site/plugins/scssphp/scss.inc.php';
+    $compiler = new Compiler();
 
-	// Activate library.
-	require_once $root . '/site/plugins/scssphp/scss.inc.php';
-	$parser = new Compiler();
+    // Setting compression provided by library.
+    $compiler->setOutputStyle('compressed');
 
-	// Setting compression provided by library.
-	$parser->setFormatter('ScssPhp\ScssPhp\Formatter\Compressed');
+    // Setting relative @import paths.
+    $importPath = $root . '/assets/scss';
 
-	// Setting relative @import paths.
-	$importPath = $root . '/assets/scss';
-	$parser->addImportPath($importPath);
+    // Place SCSS file in buffer.
+    $compiler->addImportPath($importPath);
 
-	// Place SCSS file in buffer.
-	$buffer = file_get_contents($SCSS);
+    // Compile content in buffer.
+    $buffer = file_get_contents($SCSS);
+    $buffer = $compiler->compileString($buffer)->getCss();
 
-	// Compile content in buffer.
-	$buffer = $parser->compile($buffer);
-
-	// Minify the CSS even further.
+    // Minify the CSS even further.
 	require_once $root . '/site/plugins/scssphp/minify.php';
-	$buffer = minifyCSS($buffer);
-
-	// Update CSS file.
-	file_put_contents($CSS, $buffer);
+	// $buffer = minifyCSS($buffer);
+    file_put_contents($CSS, $buffer);
 }
+
+
 
 ?>
 <link rel="stylesheet" property="stylesheet" href="<?php echo url($CSSKirbyPath) ?>?version=<?php echo $CSSFileTime ?>">

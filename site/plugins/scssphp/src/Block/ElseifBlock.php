@@ -13,15 +13,16 @@
 namespace ScssPhp\ScssPhp\Block;
 
 use ScssPhp\ScssPhp\Block;
+use ScssPhp\ScssPhp\Node\Number;
 use ScssPhp\ScssPhp\Type;
 
 /**
  * @internal
  */
-class ElseifBlock extends Block
+final class ElseifBlock extends Block
 {
     /**
-     * @var array
+     * @var array|Number
      */
     public $cond;
 

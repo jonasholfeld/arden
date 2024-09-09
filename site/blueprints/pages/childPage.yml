@@ -1,0 +1,23 @@
+title: Children
+
+# options:
+#   changeSlug: false
+#   changeStatus: false
+#   delete: false
+
+columns:
+  left:
+    width: 1/3
+    sections:
+      fields:
+        type: fields
+        fields:
+  right:
+    width: 2/3
+    sections:
+      fieldsr:
+        type: fields
+        fields:
+          projectcontent:
+            label: Inhalt
+            type: blocks

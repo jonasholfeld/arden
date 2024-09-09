@@ -1,0 +1,31 @@
+title: Parent
+
+# options:
+#   changeSlug: false
+#   changeStatus: false
+#   delete: false
+
+columns:
+  left:
+    width: 1/4
+    sections:
+      fields:
+        type: fields
+        fields:
+  right:
+    width: 3/4
+    sections:
+      pages:
+        type: pages
+        label: Children
+        layout: table
+        template: childPage
+        columns:
+          date:
+            label: Erstellt am
+            value: '{{ page.created.toDate("d.m.Y") }}'
+            limit: 20
+          modified:
+            label: Bearbeitet
+            value: '{{ page.modified("d.m.Y") }}'
+            limit: 20

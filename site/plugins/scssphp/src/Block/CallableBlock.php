@@ -19,7 +19,7 @@ use ScssPhp\ScssPhp\Node\Number;
 /**
  * @internal
  */
-class CallableBlock extends Block
+final class CallableBlock extends Block
 {
     /**
      * @var string
