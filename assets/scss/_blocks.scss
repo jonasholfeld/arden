@@ -197,3 +197,9 @@ a.block-type-button {
 .block-type-spacer {
   height: 10rem;
 }
+
+.block-type-svgupload {
+  svg {
+    width: var(--svgWidth, 50%);
+  }
+}

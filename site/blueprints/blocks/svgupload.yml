@@ -1,0 +1,19 @@
+name:
+  en: SVG Upload
+icon: image
+
+fields:
+  svg:
+    label: SVG File
+    type: files
+    multiple: false
+    query: page.files.filterBy("extension", "svg")
+    uploads:
+      accept: ".svg"
+      template: default
+  width:
+    label: Width in percent
+    type: number
+    max: 100
+    min: 0
+    default: 50
