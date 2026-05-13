@@ -50,6 +50,10 @@
     display: flex;
     justify-content: center;
     line-height: 0.9;
+
+    @include mobile {
+      font-size: 3.5rem;
+    }
   }
 
   h2 {
@@ -57,7 +61,12 @@
     font-size: $font-size-h2;
     color: $green;
     line-height: 0.8;
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
   }
+
   &.heading-width-small {
     h1,
     h2 {
@@ -68,12 +77,20 @@
     h1,
     h2 {
       max-width: 30rem;
+
+      @include mobile {
+        max-width: 90%;
+      }
     }
   }
   &.heading-width-large {
     h1,
     h2 {
       max-width: 60rem;
+
+      @include mobile {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -87,6 +104,13 @@ figure {
   img {
     height: 25rem;
     width: auto;
+
+    @include mobile {
+      height: auto;
+      width: 100%;
+      max-height: 55vw;
+      object-fit: contain;
+    }
   }
 }
 
@@ -103,6 +127,10 @@ figure {
   flex-direction: column;
   p {
     width: 50rem;
+
+    @include mobile {
+      width: 100%;
+    }
   }
   &.text-align-left {
     text-align: left;
@@ -188,6 +216,11 @@ a.block-type-button {
     color: $white;
     text-decoration: none;
   }
+
+  @include mobile {
+    font-size: 1rem;
+    padding: 0.7em 2em;
+  }
 }
 
 // ============================================================
@@ -196,10 +229,21 @@ a.block-type-button {
 
 .block-type-spacer {
   height: 10rem;
+
+  @include mobile {
+    height: 2.5rem;
+  }
 }
 
 .block-type-svgupload {
   svg {
     width: var(--svgWidth, 50%);
+
+    @include mobile {
+      width: 80%;
+      max-width: 100%;
+      height: auto;
+      max-height: 42vw;
+    }
   }
 }

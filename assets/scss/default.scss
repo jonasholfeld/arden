@@ -13,6 +13,10 @@
 
 html {
   font-size: 1vw;
+
+  @include mobile {
+    font-size: 4vw;
+  }
 }
 
 body {
@@ -45,6 +49,12 @@ main {
       background-color: $white;
       color: $green;
     }
+  }
+
+  @include mobile {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+    margin-bottom: 4rem;
   }
 }
 
