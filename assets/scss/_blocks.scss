@@ -1,0 +1,199 @@
+// ============================================================
+// Block mixins
+// ============================================================
+
+@mixin green-pill {
+  display: inline-block;
+  background-color: $green;
+  color: $white;
+  border-radius: $border-radius-pill;
+  padding: 0.6em 2em;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:visited {
+    color: $white;
+    opacity: 0.88;
+  }
+}
+
+@mixin outlined-pill {
+  display: inline-block;
+  border: $border-width solid $green;
+  border-radius: $border-radius-pill;
+  padding: 0.45rem 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+// ============================================================
+// Heading block
+// ============================================================
+
+.block-type-heading {
+  margin: 1.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-weight: bold;
+    font-size: $font-size-h1;
+    line-height: 1;
+    color: $green;
+    font-variation-settings: "wght" 700;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    line-height: 0.9;
+  }
+
+  h2 {
+    @include outlined-pill;
+    font-size: $font-size-h2;
+    color: $green;
+    line-height: 0.8;
+  }
+  &.heading-width-small {
+    h1,
+    h2 {
+      max-width: 10rem;
+    }
+  }
+  &.heading-width-medium {
+    h1,
+    h2 {
+      max-width: 30rem;
+    }
+  }
+  &.heading-width-large {
+    h1,
+    h2 {
+      max-width: 60rem;
+    }
+  }
+}
+
+figure {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 25rem;
+    width: auto;
+  }
+}
+
+// ============================================================
+// Text block
+// ============================================================
+
+.block-type-text {
+  margin: 1rem 0;
+  color: $green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    width: 50rem;
+  }
+  &.text-align-left {
+    text-align: left;
+  }
+
+  &.text-align-center {
+    text-align: center;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+
+  a {
+    color: $green;
+    text-decoration: underline;
+  }
+}
+
+// ============================================================
+// Columns block
+// ============================================================
+
+.block-type-columns {
+  margin: 1.5rem 0;
+
+  .columns-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    .column {
+      flex: 1;
+      min-width: 0;
+      padding: 0 2rem;
+
+      & + .column {
+        border-left: $border-width solid $green;
+      }
+      .block-type-text p {
+        width: 100%;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+
+      .column {
+        padding: 1rem 0;
+        width: 100%;
+
+        & + .column {
+          border-left: none;
+          border-top: $border-width solid $green;
+        }
+      }
+    }
+  }
+
+  // Blocks inside columns inherit center align
+  .block-type-heading,
+  .block-type-text {
+    text-align: center;
+  }
+}
+
+// ============================================================
+// Button block
+// ============================================================
+
+// The snippet renders the <a> tag directly with class block-type-button
+a.block-type-button {
+  @include green-pill;
+  margin: 0.5rem;
+
+  // Override generic link color rules
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// ============================================================
+// Spacer block
+// ============================================================
+
+.block-type-spacer {
+  height: 10rem;
+}

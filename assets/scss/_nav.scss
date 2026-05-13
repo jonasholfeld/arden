@@ -1,0 +1,63 @@
+$strip-width: 40px;
+
+// Smooth anchor scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Push body content inward so it stays clear of the fixed strips
+
+// Each nav strip is a fixed full-height column
+.nav-strip {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: $strip-width;
+  background-color: $green;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Rotate text so it reads upward (bottom → top)
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  color: $white;
+  font-size: 2rem;
+  font-variation-settings: "wght" 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 100;
+  cursor: pointer;
+
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $green-dark;
+    color: $white;
+  }
+
+  // 2 strips on the left, 2 on the right
+  &:nth-child(1) {
+    left: 0;
+    border-left: 1px solid $white;
+  }
+  &:nth-child(2) {
+    left: $strip-width;
+    border-left: 1px solid $white;
+  }
+  &:nth-child(3) {
+    right: $strip-width;
+    border-right: 1px solid $white;
+  }
+  &:nth-child(4) {
+    right: 0;
+    border-right: 1px solid $white;
+  }
+}

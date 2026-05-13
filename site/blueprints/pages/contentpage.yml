@@ -1,0 +1,22 @@
+title: Content Page
+
+fields:
+  colorscheme:
+    label: Color Scheme
+    type: toggles
+    default: normal
+    options:
+      - value: normal
+        text: Normal
+      - value: inverted
+        text: Inverted
+  contentblocks:
+    label: Content
+    type: blocks
+    fieldsets:
+      - heading
+      - text
+      - spacer
+      - columns
+      - image
+      - button

@@ -1,0 +1,20 @@
+name:
+  en: Button
+icon: url
+
+fields:
+  text:
+    label: Button Text
+    type: text
+    placeholder: I'm Interested
+  link:
+    label: Link URL
+    type: text
+    placeholder: https://…
+  isMailLink:
+    label: Mail link should contain subject and body
+    type: toggle
+    default: false
+    text:
+      - "Yes"
+      - "No"

@@ -1,3 +1,18 @@
 title: Site
-preset: pages
-unlisted: true
+
+tabs:
+  main:
+    label: Content
+    sections:
+      content:
+        type: pages
+        parent: site.find("home")
+  mail:
+    label: Mail
+    fields:
+      mailSubject:
+        label: Subject
+        type: text
+      mailContent:
+        label: Content
+        type: textarea

@@ -2,19 +2,57 @@
 @import "variables";
 @import "typography";
 @import "grid";
+@import "blocks";
+@import "nav";
 
-body {
-    color: green;
-    h1 {
-        &:nth-child(1) {
-            p {
-                color: lightpink;
-            }
-        }
-    }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+html {
+  font-size: 1vw;
+}
 
+body {
+  color: $green;
+  text-align: center;
+  background-color: $white;
+  margin: 0 !important;
+}
 
+main {
+  padding: 0;
+}
 
+.content-section {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: $section-padding;
+  min-height: 100vh;
+  margin-bottom: 20rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &.inverted {
+    background-color: $green;
+    color: $white;
+    * {
+      color: $white;
+    }
+    a.block-type-button {
+      background-color: $white;
+      color: $green;
+    }
+  }
+}
 
+// Button row: consecutive buttons sit side by side
+.buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}

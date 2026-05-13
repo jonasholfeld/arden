@@ -1,8 +1,26 @@
-/*Colors*/
+// Colors
+$green: #2d7047;
+$green-dark: #1e5233;
+$white: #ffffff;
+$black: #000000;
 
-$base-color: black;
-$key-color: red;
-$key-color-2: black;
-
-$lightgrey:rgba(220,220,220,1);;
+// Legacy aliases
+$base-color: $black;
+$key-color: $green;
+$key-color-2: $green-dark;
+$lightgrey: rgba(220, 220, 220, 1);
 $grey: grey;
+
+// Spacing
+$section-padding: 0rem 1.5rem;
+$content-max-width: 90rem;
+
+// Typography
+$font-size-h1: 4.5rem;
+$font-size-h2: 2rem;
+$font-size-body: 1rem;
+
+// Borders
+$border-radius-pill: 100px;
+$border-radius-box: 1.5rem;
+$border-width: 0.1rem;

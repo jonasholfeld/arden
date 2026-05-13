@@ -1,0 +1,14 @@
+title: Arden Workshop
+
+sections:
+  pages:
+    type: pages
+    label: Content Sections
+    layout: table
+    template: contentpage
+    status: any
+    columns:
+      title:
+        label: Section
+      slug:
+        label: Slug
